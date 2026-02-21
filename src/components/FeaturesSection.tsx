@@ -1,62 +1,73 @@
 import { motion } from "framer-motion";
-import { Shield, Zap, Gift, HeadphonesIcon } from "lucide-react";
+import { Shield, Zap, Gift, HeadphonesIcon, Trophy, Lock } from "lucide-react";
 
 const features = [
   {
     icon: Shield,
     title: "100% Secure",
-    description: "Bank-grade encryption ensures your funds and data remain protected at all times.",
+    description: "Bank-grade encryption protects your funds and personal data around the clock.",
   },
   {
     icon: Zap,
     title: "Instant Payouts",
-    description: "Withdraw your winnings instantly. No delays, no hidden fees, no hassle.",
+    description: "Withdraw winnings in minutes. No delays, no hidden charges, no minimum limits.",
   },
   {
     icon: Gift,
-    title: "Exclusive Bonuses",
-    description: "Enjoy massive welcome bonuses, daily rewards, and VIP loyalty programs.",
+    title: "Massive Bonuses",
+    description: "Up to 200% welcome bonus, daily cashbacks, and exclusive VIP rewards program.",
   },
   {
     icon: HeadphonesIcon,
     title: "24/7 Support",
-    description: "Our dedicated team is always available to assist you via WhatsApp anytime.",
+    description: "Dedicated WhatsApp support team available anytime for instant assistance.",
+  },
+  {
+    icon: Trophy,
+    title: "VIP Program",
+    description: "Climb the ranks to unlock exclusive perks, higher limits, and personal managers.",
+  },
+  {
+    icon: Lock,
+    title: "Fair Play",
+    description: "All games are certified and audited for fairness with transparent RTP rates.",
   },
 ];
 
 const FeaturesSection = () => {
   return (
-    <section id="features" className="py-24 bg-secondary/50">
-      <div className="container mx-auto px-4">
+    <section id="features" className="py-20 sm:py-28 bg-card/50">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-            Why Choose <span className="text-gradient-gold">Us</span>
+          <span className="text-primary text-sm font-semibold tracking-widest uppercase">Why Us</span>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-4">
+            Why Players <span className="text-gradient-gold">Trust Us</span>
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
-            We provide a premium, trustworthy, and rewarding gaming experience like no other.
+          <p className="text-muted-foreground max-w-xl mx-auto text-sm sm:text-base">
+            We've built the most trusted and rewarding platform for serious players.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {features.map((feature, i) => (
             <motion.div
               key={feature.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="bg-card border border-border rounded-2xl p-6 hover:border-primary/30 hover:glow-gold-sm transition-all duration-300 group"
+              transition={{ delay: i * 0.08 }}
+              className="bg-card border border-border rounded-2xl p-6 sm:p-8 hover:border-primary/30 transition-all duration-300 group"
             >
-              <div className="w-12 h-12 rounded-xl bg-gradient-gold flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <feature.icon className="w-6 h-6 text-primary-foreground" />
+              <div className="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-5 group-hover:bg-gradient-gold group-hover:border-transparent transition-all duration-300">
+                <feature.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors" />
               </div>
               <h3 className="font-display text-xl font-bold mb-2">{feature.title}</h3>
-              <p className="text-sm text-muted-foreground">{feature.description}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
             </motion.div>
           ))}
         </div>
