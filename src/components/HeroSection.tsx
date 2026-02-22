@@ -43,7 +43,6 @@ const HeroSection = () => {
             transition={{ duration: 0.5 }}
             className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 backdrop-blur-sm rounded-full px-3 py-1.5 sm:px-4 sm:py-2 mb-5 sm:mb-8"
           >
-            <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary" />
             <span className="text-xs sm:text-sm text-primary font-semibold tracking-wide">
               #1 Trusted Gaming Platform
             </span>
